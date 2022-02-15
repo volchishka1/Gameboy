@@ -10,6 +10,14 @@ let getDistance = function (event, target) {
     return Math.sqrt((diffX * diffX) + (diffY * diffY))
 }
 
+let drawScore = function () {
+    ctx.font = "20px Courier";
+    ctx.fillStyle = "Black";
+    ctx.textAlign = "left";
+    ctx.textBaseline = "top";
+    ctx.fillText("Счет: " + distanceHint);
+};
+
 let gameOver = function () {
     playing = false;
     ctx.font = "60px Courier";

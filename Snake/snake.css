@@ -5,6 +5,7 @@ canvas {
     left: 50.5%;
     transform: translate(-50%, -50%);
 }
+
 img {
     width: 67em;
     font-size: larger;
@@ -13,3 +14,19 @@ img {
     left: 50%;
     transform: translate(-50%, -50%)
 }
+
+a {
+    position: absolute;
+    top: 21%;
+    left: 74.5%;
+    color: #000080; /* Цвет обычной ссылки */
+    padding: 2px; /* Поля вокруг текста */
+    text-decoration: none;
+   }
+   a:visited {
+    color: #000000; /* Цвет посещенной ссылки */
+   } 
+   a:hover {
+    color: #fff; /* Цвет ссылки при наведении на нее курсора мыши */  
+    background: #8b8b8b; /* Цвет фона */
+   }

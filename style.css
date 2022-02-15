@@ -11,7 +11,7 @@
 }
 
 #areal-1 {
-    position: relative;
+    position: absolute;
     width: 50px;
     top: 275px;
     left: 31px;
@@ -70,11 +70,21 @@
     margin-right: -50%;
     transform: translate(-50%, -50%)
 }
-a {
-    text-decoration: none;
-}
+
 canvas {
     position: relative;
     z-index: 999;
 }
 
+a {
+    color: #000080; /* Цвет обычной ссылки */
+    padding: 2px; /* Поля вокруг текста */
+    text-decoration: none;
+   }
+   a:visited {
+    color: #272525; /* Цвет посещенной ссылки */
+   } 
+   a:hover {
+    color: #fff; /* Цвет ссылки при наведении на нее курсора мыши */  
+    background: #a1a1a1; /* Цвет фона */
+   }
