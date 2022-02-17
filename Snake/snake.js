@@ -15,13 +15,13 @@ const heightInBlocks = height / blockSize;
 let score = 0;
 
 // Рисуем рамку
-const drawBorder = function () {
-    ctx.fillStyle = "Gray";
-    ctx.fillRect(0, 0, width, blockSize);
-    ctx.fillRect(0, height - blockSize, width, blockSize);
-    ctx.fillRect(0, 0, blockSize, height);
-    ctx.fillRect(width - blockSize, 0, blockSize, height);
-};
+// const drawBorder = function () {
+//     ctx.fillStyle = "Gray";
+//     ctx.fillRect(0, 0, width, blockSize);
+//     ctx.fillRect(0, height - blockSize, width, blockSize);
+//     ctx.fillRect(0, 0, blockSize, height);
+//     ctx.fillRect(width - blockSize, 0, blockSize, height);
+// };
 
 // Выводим счет игры в левом верхнем углу
 let drawScore = function () {
@@ -29,7 +29,7 @@ let drawScore = function () {
     ctx.fillStyle = "Black";
     ctx.textAlign = "left";
     ctx.textBaseline = "top";
-    ctx.fillText("Счет: " + score, blockSize, blockSize);
+    ctx.fillText("Счет: " + score, 0, 0);
 };
 
 // Отменяем действие setInterval и печатаем сообщение «Конец игры»
@@ -130,9 +130,9 @@ Snake.prototype.move = function () {
 
     if (this.checkCollision(newHead)) {
         gameOver();
-        setTimeout(() => {
-            document.location.reload();
-        }, 5000)
+        // setTimeout(() => {
+        //     document.location.reload();
+        // }, 5000)
     }
 
     this.segments.unshift(newHead);
@@ -190,7 +190,7 @@ const Apple = function () {
 
 // Рисуем кружок в позиции яблока
 Apple.prototype.draw = function () {
-    this.position.drawCircle("LimeGreen");
+    this.position.drawCircle("#d30a5e");
 };
 
 // Перемещаем яблоко в случайную позицию
@@ -225,7 +225,7 @@ let gameLoop = function () {
     snake.move();
     snake.draw();
     apple.draw();
-    drawBorder();
+    // drawBorder();
 
     // Устанавливается в false функцией gameOver
     if (playing) {
