@@ -20,16 +20,16 @@ let drawScore = function () {
 
 let gameOver = function () {
     playing = false;
-    ctx.font = "60px Courier";
+    ctx.font = "60px Courier bold";
     ctx.fillStyle = "#FFB02E";
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
-    ctx.fillText("Конец игры", width / 1.6, height / 3);
+    ctx.fillText("Клад не найден!", width / 1.6, height / 3);
 }; 
 
 let win = function () {
     playing = false;
-    ctx.font = "35px Courier";
+    ctx.font = "35px Courier bold";
     ctx.fillStyle = "#FFB02E";
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
@@ -74,7 +74,7 @@ let reloadPage = (a) => {
 }
 
 // Добавляем элементу img обработчик клика
-$("#canvas").click(function (event){
+$("#findCanvas").click(function (event){
     clicks++
 
     if (clicks > clickLimit) {
@@ -100,8 +100,8 @@ $("#canvas").click(function (event){
 })
 
 const img = new Image();
-img.src = '../images/map.jpg';
-const canvas = document.getElementById('canvas');
+img.src = './images/map.jpg';
+const canvas = document.getElementById('findCanvas');
 const ctx = canvas.getContext('2d');
 img.onload = function() {
   ctx.drawImage(img, 0, 0);

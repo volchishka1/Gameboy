@@ -11,21 +11,25 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    margin-right: -50%;
     transform: translate(-50%, -50%)
 }
 
+#back {
+    float: right;
+    z-index: 999
+}
+
 a {
-    color: #000080; /* Цвет обычной ссылки */
-    padding: 2px; /* Поля вокруг текста */
+    color: #000080; 
+    padding: 2px; 
     text-decoration: none;
    }
 a:visited {
-    color: #272525; /* Цвет посещенной ссылки */
+    color: #272525; 
    } 
 a:hover {
-    color: #fff; /* Цвет ссылки при наведении на нее курсора мыши */  
-    background: #a1a1a1; /* Цвет фона */
+    color: #fff; 
+    background: #a1a1a1;
    }
 
 
@@ -41,9 +45,94 @@ a:hover {
     transform: translate(-50%, -50%)
 }
 
-@media(min-width: 1400px){
+
+/* arcanoid */
+#myCanvas { 
+    background: #85b4eb;
+    position: absolute;
+    top: 49.5%;
+    left: 50.5%;
+    transform: translate(-50%, -50%);
+}
+canvas.arcanoid {
+    width: 57%;
+}
+
+/* ping-pong */
+#game {
+    position: absolute;
+    margin: 0 auto;
+    top: 49.4%;
+    left: 50.5%;
+    transform: translate(-50%, -50%)
+}
+
+#game canvas {
+    display: block;
+    position: absolute;
+    top: 49.4%;
+    left: 50.5%;
+    transform: translate(-50%, -50%)
+}
+
+/* snake */
+
+#snakeCanvas{
+    background: #6ae67b;
+    position: absolute;
+    top: 49.5%;
+    left: 50.5%;
+    transform: translate(-50%, -50%);
+}
+
+canvas.snake {
+    width: 57%;
+}
+
+/* find */
+
+h1 {
+    color: #FFB02E;
+    z-index: 999;
+    position: absolute;
+    top: 3%;
+    left: 50.5%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    /* font-size: 150%;  */
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+#findCanvas {
+    padding: 8px 12px;
+    margin: 0;
+    position: absolute;
+    top: 49.5%;
+    left: 50.5%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+
+canvas.find-treasure {
+    width: 57%;
+}
+
+
+@media(min-width: 300px){
     #all {
-        font-size: 60px;
+        font-size: 15px;
+    }
+}
+
+@media(min-width: 500px){
+    #all {
+        font-size: 20px;
+    }
+}
+
+@media(min-width: 800px){
+    #all {
+        font-size: 30px;
     }
 }
 @media(min-width: 1200px){
@@ -51,6 +140,13 @@ a:hover {
         font-size: 40px;
     }
 }
+
+@media(min-width: 1400px){
+    #all {
+        font-size: 60px;
+    }
+}
+
 
 @media(min-width: 1900px){
     #all {

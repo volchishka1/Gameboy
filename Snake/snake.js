@@ -1,5 +1,5 @@
 // Настройка «холста»
-const canvas = document.getElementById("canvas");
+const canvas = document.getElementById("snakeCanvas");
 const ctx = canvas.getContext("2d");
 
 // Получаем ширину и высоту элемента canvas
@@ -96,15 +96,17 @@ let Snake = function () {
 
 // Рисуем квадратик для каждого сегмента тела змейки
 Snake.prototype.draw = function () {
-    this.segments[0].drawSquare("white");
+    this.segments[0].drawSquare("yellow");
     let isEvenSegment = false;
 
     for (let i = 1; i < this.segments.length; i++) {
-        if (isEvenSegment) {
-            this.segments[i].drawSquare("white");
-        } else {
-            this.segments[i].drawSquare("red");
-        }
+        this.segments[i].drawSquare("black");
+        // if (isEvenSegment) {
+        //     this.segments[i].drawSquare("black");
+        // }
+        // } else {
+        //     this.segments[i].drawSquare("red");
+        // }
 
         isEvenSegment = !isEvenSegment; // следующий сегмент будет нечетным
     }
@@ -130,9 +132,9 @@ Snake.prototype.move = function () {
 
     if (this.checkCollision(newHead)) {
         gameOver();
-        // setTimeout(() => {
-        //     document.location.reload();
-        // }, 5000)
+        setTimeout(() => {
+            document.location.reload();
+        }, 5000)
     }
 
     this.segments.unshift(newHead);
@@ -190,7 +192,7 @@ const Apple = function () {
 
 // Рисуем кружок в позиции яблока
 Apple.prototype.draw = function () {
-    this.position.drawCircle("#d30a5e");
+    this.position.drawCircle("red");
 };
 
 // Перемещаем яблоко в случайную позицию
