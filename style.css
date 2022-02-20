@@ -16,7 +16,7 @@
 
 #back {
     float: right;
-    z-index: 999
+    z-index: 999;
 }
 
 a {
@@ -53,6 +53,7 @@ a:hover {
     top: 49.5%;
     left: 50.5%;
     transform: translate(-50%, -50%);
+    z-index: 999;
 }
 canvas.arcanoid {
     width: 57%;
@@ -64,7 +65,8 @@ canvas.arcanoid {
     margin: 0 auto;
     top: 49.4%;
     left: 50.5%;
-    transform: translate(-50%, -50%)
+    transform: translate(-50%, -50%);
+    z-index: 999;
 }
 
 #game canvas {
@@ -72,7 +74,7 @@ canvas.arcanoid {
     position: absolute;
     top: 49.4%;
     left: 50.5%;
-    transform: translate(-50%, -50%)
+    transform: translate(-50%, -50%);
 }
 
 /* snake */
@@ -83,6 +85,7 @@ canvas.arcanoid {
     top: 49.5%;
     left: 50.5%;
     transform: translate(-50%, -50%);
+    z-index: 999;
 }
 
 canvas.snake {
@@ -110,7 +113,8 @@ h1 {
     top: 49.5%;
     left: 50.5%;
     margin-right: -50%;
-    transform: translate(-50%, -50%)
+    transform: translate(-50%, -50%);
+    z-index: 999;
 }
 
 canvas.find-treasure {
