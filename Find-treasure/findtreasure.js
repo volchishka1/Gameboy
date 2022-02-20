@@ -29,7 +29,7 @@ let gameOver = function () {
 
 let win = function () {
     playing = false;
-    ctx.font = "35px Courier bold";
+    ctx.font = "30px Courier bold";
     ctx.fillStyle = "#FFB02E";
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
@@ -67,19 +67,19 @@ let target = {
     y: getRandomNumber(height)
 }
 
-let reloadPage = (a) => {
-    setTimeout(() => {
-        document.location.reload();
-    }, a)
-}
+// let reloadPage = (a) => {
+//     setTimeout(() => {
+//         document.location.reload();
+//     }, a)
+// }
 
 // Добавляем элементу img обработчик клика
 $("#findCanvas").click(function (event){
     clicks++
 
-    if (clicks > clickLimit) {
+    if (clicks >= clickLimit) {
         gameOver();
-        reloadPage(2000)
+        clicks--;
     }
     // Получаем расстояние от места клика до клада
     let distance = getDistance(event, target)
@@ -95,7 +95,7 @@ $("#findCanvas").click(function (event){
     // Если клик был достаточно близко, поздравляем с победой
     if (distance < 18) {
         win();
-        reloadPage(5000);
+        // reloadPage(5000);
 }
 })
 
@@ -110,8 +110,8 @@ img.onload = function() {
 
 function draw(e) {
     let pos = getMousePos(canvas, e);
-    posx = pos.x - 12;
-    posy = pos.y - 8;
+    posx = pos.x;
+    posy = pos.y;
     ctx.fillStyle = "#FFB02E";
     ctx.beginPath();
     ctx.arc(posx, posy, 7, 0, 2*Math.PI);

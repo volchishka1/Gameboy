@@ -19,6 +19,16 @@ let brickOffsetTop = 30;
 let brickOffsetLeft = 15;
 let score = 0;
 let lives = 3;
+let clickAudio=new Audio("http://fe.it-academy.by/Examples/Sounds/button-16.mp3");
+function clickSoundInit() {
+  clickAudio.play();
+  clickAudio.pause();
+}
+function clickSound() {
+  clickAudio.currentTime=0; // в секундах
+  clickAudio.play();
+}
+
 
 let bricks = [];
 for(let c=0; c<brickColumnCount; c++) {
@@ -64,6 +74,7 @@ function collisionDetection() {
         if(x > b.x && x < b.x+brickWidth && y > b.y && y < b.y+brickHeight) {
           dy = -dy;
           b.status = 0;
+          clickSound();
           score++;
           if(score == brickRowCount*brickColumnCount) {
             alert("YOU WIN, CONGRATS!");
@@ -125,6 +136,7 @@ function draw() {
   drawScore();
   drawLives();
   collisionDetection();
+  
 
   if(x + dx > canvas.width-ballRadius || x + dx < ballRadius) {
     dx = -dx;

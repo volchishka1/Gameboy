@@ -35,11 +35,11 @@ let drawScore = function () {
 // Отменяем действие setInterval и печатаем сообщение «Конец игры»
 let gameOver = function () {
     playing = false;
-    ctx.font = "60px Courier";
+    ctx.font = "35px Courier";
     ctx.fillStyle = "Black";
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
-    ctx.fillText("Конец игры", width / 2, height / 2);
+    ctx.fillText("Конец игры." + " Количество очков: " + score, width / 2, height / 2);
     
 };
 
@@ -132,9 +132,6 @@ Snake.prototype.move = function () {
 
     if (this.checkCollision(newHead)) {
         gameOver();
-        setTimeout(() => {
-            document.location.reload();
-        }, 5000)
     }
 
     this.segments.unshift(newHead);
@@ -248,9 +245,8 @@ const directions = {
 
 // Задаем обработчик события keydown (клавиши-стрелки)
 $("body").keydown(function (event) {
-    var newDirection = directions[event.keyCode];
+    let newDirection = directions[event.keyCode];
     if (newDirection !== undefined) {
         snake.setDirection(newDirection);
     }
 });
-
