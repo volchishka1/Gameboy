@@ -38,7 +38,7 @@ function gameOver() {
   ctx.fillStyle = "#0095DD";
   ctx.textAlign = "center";
   ctx.textBaseline = "middle";
-  ctx.fillText("Вы проиграли. Количество очков: " + score, x-210, y/2);
+  ctx.fillText("Вы проиграли. Количество очков: " + score, x-100, y/2);
 }; 
 
 function win() {
