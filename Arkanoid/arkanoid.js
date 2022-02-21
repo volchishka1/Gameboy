@@ -18,7 +18,7 @@ let brickPadding = 10;
 let brickOffsetTop = 30;
 let brickOffsetLeft = 15;
 let score = 0;
-let lives = 1;
+let lives = 3;
 let clickAudio=new Audio("http://fe.it-academy.by/Examples/Sounds/button-16.mp3");
 let playing = true;
 function clickSoundInit() {
