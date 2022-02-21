@@ -43,7 +43,7 @@ function switchToStateFromURLHash() {
       $("#all").hide();
       pageHTML = `<div id="heading">
       <h1>Найди клад: <span id = "clicks-remaining"></span> <span id="distance"></span><h1></div>
-      <canvas id="findCanvas" class="find-treasure" width="750" height="420"></canvas>`
+      <div class="find-treasure" width="750" height="420"><canvas id="findCanvas" width="750" height="420"></canvas></div>`
       document.getElementById('IPage').innerHTML = pageHTML;
       script.src = './Find-treasure/findtreasure.js';
       document.head.appendChild(script);

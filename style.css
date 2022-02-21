@@ -1,9 +1,3 @@
-.cont {
-    width: 100%;
-    margin: 0 auto;
-    text-align: center;
-}
-
 button {
     position: absolute;
     transform: translate(-50%, -50%);
@@ -23,6 +17,8 @@ button {
     font-size: 30px;
     padding: 10px 10px;
     border-radius: 15%;
+    z-index: 999;
+
 }
 
 
@@ -33,7 +29,7 @@ button {
     color: black;
     font-size: 30px;
     padding: 10px 10px;
-
+    z-index: 999;
 }
 
 #top {
@@ -73,8 +69,6 @@ button {
     border-radius: 50%;
 }
 
-
-
 #IPage {
     width: 99%;
     text-align: center;
@@ -83,7 +77,6 @@ button {
     left: 51%;
     transform: translate(-50%, -50%);
     margin: -8px;
-    z-index: 999;
 }
 
 #fon {
@@ -132,12 +125,12 @@ canvas.arcanoid {
 /* ping-pong */
 #game {
     position: absolute;
-    left: 49.7%;
+    left: 50%;
     transform: translate(-50%, -50%);
 }
 #game canvas {
     position: absolute;
-    left: 50.5%;
+    left: 50%;
     transform: translate(-50%, -50%);
 }
 
@@ -161,11 +154,19 @@ h1 {
     font-size: 23px;
 }
 #findCanvas {
-    /* padding: 8px 12px; */
     margin: 0;
 }
 canvas.find-treasure {
-    width: 57%;
+    width: 100%;
+}
+
+@media(min-width: 500px){
+    #game {
+        width: 65.5%;
+    }
+    #game canvas {
+        width: 65.5%;
+    } 
 }
 
 @media(min-width: 800px){
@@ -174,8 +175,7 @@ canvas.find-treasure {
     }
     #game canvas {
         width: 75.5%;
-    }
-    
+    } 
 }
 @media(min-width: 300px){
     #all {
@@ -183,7 +183,6 @@ canvas.find-treasure {
     }
 }
 @media(min-width: 500px){
-
     #all {
         font-size: 20px;
     }
@@ -208,3 +207,4 @@ canvas.find-treasure {
         font-size: 75px;
     }
 }
+
