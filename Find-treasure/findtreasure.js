@@ -21,7 +21,7 @@ let drawScore = function () {
 let gameOver = function () {
     playing = false;
     ctx.font = "60px Courier bold";
-    ctx.fillStyle = "#FFB02E";
+    ctx.fillStyle = "white";
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
     ctx.fillText("Клад не найден!", width / 1.6, height / 3);
@@ -29,8 +29,8 @@ let gameOver = function () {
 
 let win = function () {
     playing = false;
-    ctx.font = "30px Courier bold";
-    ctx.fillStyle = "#FFB02E";
+    ctx.font = "40px Courier bold";
+    ctx.fillStyle = "white";
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
     ctx.fillText("Клад найден! Сделано кликов: " + clicks, width / 1.6, height / 3);

@@ -20,6 +20,7 @@ let brickOffsetLeft = 15;
 let score = 0;
 let lives = 3;
 let clickAudio=new Audio("http://fe.it-academy.by/Examples/Sounds/button-16.mp3");
+let playing = true;
 function clickSoundInit() {
   clickAudio.play();
   clickAudio.pause();
@@ -27,6 +28,26 @@ function clickSoundInit() {
 function clickSound() {
   clickAudio.currentTime=0; // в секундах
   clickAudio.play();
+}
+
+
+
+function gameOver() {
+  playing = false;
+  ctx.font = "40px Courier bold";
+  ctx.fillStyle = "#0095DD";
+  ctx.textAlign = "center";
+  ctx.textBaseline = "middle";
+  ctx.fillText("Вы проиграли. Количество очков: " + score, x/1.6, y/2);
+}; 
+
+function win() {
+  playing = false;
+  ctx.font = "30px Courier bold";
+  ctx.fillStyle = "#0095DD";
+  ctx.textAlign = "center";
+  ctx.textBaseline = "middle";
+  ctx.fillText("Победа", x/1.6, y/2);
 }
 
 
@@ -77,8 +98,7 @@ function collisionDetection() {
           clickSound();
           score++;
           if(score == brickRowCount*brickColumnCount) {
-            alert("YOU WIN, CONGRATS!");
-            document.location.reload();
+            win();
           }
         }
       }
@@ -136,6 +156,8 @@ function draw() {
   drawScore();
   drawLives();
   collisionDetection();
+
+
   
 
   if(x + dx > canvas.width-ballRadius || x + dx < ballRadius) {
@@ -151,8 +173,7 @@ function draw() {
     else {
       lives--;
       if(!lives) {
-        alert("GAME OVER");
-        document.location.reload();
+        gameOver();
       }
       else {
         x = canvas.width/2;
@@ -173,7 +194,10 @@ function draw() {
 
   x += dx;
   y += dy;
-  requestAnimationFrame(draw);
+
+  if (playing) {
+    requestAnimationFrame(draw);
+}
 }
 
 draw();

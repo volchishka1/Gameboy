@@ -35,7 +35,7 @@ let drawScore = function () {
 // Отменяем действие setInterval и печатаем сообщение «Конец игры»
 let gameOver = function () {
     playing = false;
-    ctx.font = "35px Courier";
+    ctx.font = "40px Courier bold";
     ctx.fillStyle = "Black";
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
