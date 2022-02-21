@@ -18,7 +18,7 @@ let brickPadding = 10;
 let brickOffsetTop = 30;
 let brickOffsetLeft = 15;
 let score = 0;
-let lives = 3;
+let lives = 1;
 let clickAudio=new Audio("http://fe.it-academy.by/Examples/Sounds/button-16.mp3");
 let playing = true;
 function clickSoundInit() {
@@ -38,7 +38,7 @@ function gameOver() {
   ctx.fillStyle = "#0095DD";
   ctx.textAlign = "center";
   ctx.textBaseline = "middle";
-  ctx.fillText("Вы проиграли. Количество очков: " + score, x/1.6, y/2);
+  ctx.fillText("Вы проиграли. Количество очков: " + score, x-210, y/2);
 }; 
 
 function win() {
